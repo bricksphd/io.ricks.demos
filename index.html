@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" rel="icon"
+    type="image/x-icon" /><!--tiny.cc/emptyimage-->
+</head>
+
+<body style="background-color:black">
+  <div id='app'>
+    <v-app>
+      <v-main>
+        <v-container>
+          <v-row>
+            <v-col cols=12 v-for="row in rows" :key="row.url">
+              <v-card>
+                <v-card-title>
+                  {{row.name}} 
+                  <span v-if="row.status">&nbsp;[{{row.status}}]</span>
+                  <span v-if="row.url">&nbsp;
+                    <a :href="row.url" target="_blank">
+                      <v-icon>mdi-link</v-icon></a>
+                  </span>
+                </v-card-title>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+  <script>
+
+    const app = new Vue({
+      el: '#app',
+      vuetify: new Vuetify({
+        theme: { dark: true },
+      }),
+      data: {
+        rows: [
+          { name: "Array List Sandbox", url: "https://arraylist.ricks.io/" },
+          { name: "AVL Sandbox", url: "https://avl.ricks.io/", status:"broken" },
+          { name: "Bridge Strain", url: "https://bridgestrain.ricks.io/" },
+          { name: "Binary Search Tree-Backed Collection", url: "https://bst.ricks.io/", status:"broken" },
+          { name: "Color Matching", url: "https://colors.ricks.io/" },
+          { name: "A Graph View of the CS Program", url: "https://csmajory.ricks.io/" },
+          { name: "Data Structures", url: "https://datastructures.ricks.io/", status:"broken" },
+          { name: "Java Debugging Practice", url: "https://debug.ricks.io/", status:"obscelete" },
+          { name: "ED-GE Engine", url: "https://ed-ge.ricks.io/", status:"obscelete" },
+          { name: "ER-Simulation", url: "https://er-new.ricks.io/" },
+          { name: "ER-Simulation", url: "https://er-old.ricks.io/", status:"obscelete" },
+          { name: "ER-Simulation", url: "https://er.ricks.io/", status:"obscelete" },
+          { name: "fNIRS Visualizer", url: "https://fnirs.ricks.io/", status:"broken" },
+          { name: "Grayscale Sandbox", url: "https://grayscale.ricks.io/"},
+          { name: "Hashtable Sandbox", url: "https://hash.ricks.io/"},
+          { name: "HEROES Triage Simulator", url: "https://heroes.ricks.io/", status: "outdated"},
+          { name: "State-Level Bridge Repair Patterns", url: "https://hexstates.ricks.io/", status: "outdated"},
+          { name: "Pong Demo", url: "https://pong.ricks.io/", status: "broken"},
+          { name: "Blood Pressure Quiz", url: "https://pressure.ricks.io/", status: "broken"},
+          { name: "Detailed Look at Bridge Health", url: "https://repairs.ricks.io/"},
+          { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/"},
+          { name: "Demo Reel", url: "https://tv.ricks.io/"},
+          
+        ],
+      },
+      methods: {
+
+      },
+    });
+
+  </script>
+</body>
+
+</html>
