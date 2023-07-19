@@ -13,16 +13,20 @@
 
 <body style="background-color:black">
   <div id='app'>
-    <v-app>
+    <v-app style="overflow-y:hidden">
       <v-main>
+        <v-app-bar dense>
+          Brian Ricks, PhD Demo Page
+        </v-app-bar>
+
         <v-container>
-          <v-row>
+          <div style="height:15px"></div>
+          <v-row >
             <v-col v-for="row in rows" :key="row.url">
               <v-card @click="click(row)" max-width="200px">
                 <v-img :src="row.image" max-height="100px" class="align-end">
                   <div style="background-color:rgba(255,255,255,.8);">
-                    <span
-                      style="color:black;text-shadow:white .5px .5px;margin:2px">
+                    <span style="color:black;text-shadow:white .5px .5px;margin:2px">
                       <span class="text-subtitle-1">
                         {{row.name}}
                       </span>
@@ -68,6 +72,8 @@
           { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/", goal: "3320", image: "./img/sort.jpg" },
           { name: "Word Search Creator", url: "https://word-search.ricks.io/", goal: "fun", image: "./img/search.jpg" },
           { name: "World Visualizer", url: "https://world.ricks.io/", goal: "fun", image: "./img/world.jpg" },
+          { name: "Demo Reel", url: "https://tv.ricks.io/", goal: "research", image: "./img/camera.jpg" },
+          { name: "Demo Reel", url: "https://tv.ricks.io/", goal: "research", image: "./img/camera.jpg" },
           { name: "Demo Reel", url: "https://tv.ricks.io/", goal: "research", image: "./img/camera.jpg" },
 
         ],
