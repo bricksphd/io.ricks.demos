@@ -17,16 +17,17 @@
       <v-main>
         <v-container>
           <v-row>
-            <v-col cols=6 v-for="row in rows" :key="row.url">
-              <v-card @click="click(row)">
-                <v-card-title style="word-break:normal">
-                  {{row.name}}
-                </v-card-title>
-                <v-card-text>
-                  <span v-if="row.goal">&nbsp;[{{row.goal}}]</span>
-                </v-card-text>
-                <v-img :src="row.image">
-
+            <v-col v-for="row in rows" :key="row.url">
+              <v-card @click="click(row)" max-width="200px">
+                <v-img :src="row.image" max-height="100px" class="align-end">
+                  <div style="background-color:rgba(255,255,255,.8);">
+                    <span
+                      style="color:black;text-shadow:white .5px .5px;margin:2px">
+                      <span class="text-subtitle-1">
+                        {{row.name}}
+                      </span>
+                    </span>
+                  </div>
                 </v-img>
               </v-card>
             </v-col>
@@ -53,17 +54,17 @@
           { name: "Array List Sandbox", url: "https://arraylist.ricks.io/", goal: "3320", image: "list.jpg" },
           { name: "AVL Sandbox", url: "https://avl.ricks.io/", goal: "3320", image: "list.jpg" },
           { name: "Bridge Strain", url: "https://bridgestrain.ricks.io/", goal: "research", image: "list.jpg" },
-          { name: "Binary Search Tree-Backed Collection", url: "https://bst.ricks.io/", goal: "3320", image: "list.jpg" },
+          { name: "Binary Tree Sandbox", url: "https://bst.ricks.io/", goal: "3320", image: "list.jpg" },
           { name: "Color Matching", url: "https://colors.ricks.io/", goal: "2620", image: "list.jpg" },
-          { name: "A Graph View of the CS Program", url: "https://csmajory.ricks.io/", goal: "service", image: "list.jpg" },
+          { name: "Graph View of CS Program", url: "https://csmajory.ricks.io/", goal: "service", image: "list.jpg" },
           { name: "ER-Simulation", url: "https://er.ricks.io/", goal: "research", image: "list.jpg" },
-          { name: "Checkers Game ala Connect Four", url: "https://four-in-a-row.ricks.io/", goal: "fun", image: "list.jpg" },
+          { name: "Game ala Connect Four", url: "https://four-in-a-row.ricks.io/", goal: "fun", image: "list.jpg" },
           { name: "Grayscale Sandbox", url: "https://grayscale.ricks.io/", goal: "2620", image: "list.jpg" },
           { name: "Hashtable Sandbox", url: "https://hash.ricks.io/", goal: "3320", image: "list.jpg" },
           { name: "HEROES Triage Simulator", url: "https://heroes.ricks.io/", goal: "research", image: "list.jpg" },
-          { name: "State-Level Bridge Repair Patterns", url: "https://hexstates.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "Bridge Repair Patterns", url: "https://hexstates.ricks.io/", goal: "research", image: "list.jpg" },
           { name: "Blood Pressure Quiz", url: "https://pressure.ricks.io/", goal: "research", image: "list.jpg" },
-          { name: "Detailed Look at Bridge Health", url: "https://repairs.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "Bridge Health Visualization", url: "https://repairs.ricks.io/", goal: "research", image: "list.jpg" },
           { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/", goal: "3320", image: "list.jpg" },
           { name: "A Word Search Creator", url: "https://word-search.ricks.io/", goal: "fun", image: "list.jpg" },
           { name: "A Word Visualizer", url: "https://wordl.ricks.io/", goal: "fun", image: "list.jpg" },
