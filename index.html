@@ -5,7 +5,7 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <link href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" rel="icon"
     type="image/x-icon" /><!--tiny.cc/emptyimage-->
@@ -17,16 +17,17 @@
       <v-main>
         <v-container>
           <v-row>
-            <v-col cols=2 v-for="row in rows" :key="row.url">
-              <v-card>
+            <v-col cols=6 v-for="row in rows" :key="row.url">
+              <v-card @click="click(row)">
+                <v-card-title style="word-break:normal">
+                  {{row.name}}
+                </v-card-title>
                 <v-card-text>
-                  {{row.name}} 
-                  <span v-if="row.status">&nbsp;[{{row.status}}]</span>
-                  <span v-if="row.url">&nbsp;
-                    <a :href="row.url" target="_blank">
-                      <v-icon>mdi-link</v-icon></a>
-                  </span>
+                  <span v-if="row.goal">&nbsp;[{{row.goal}}]</span>
                 </v-card-text>
+                <v-img :src="row.image">
+
+                </v-img>
               </v-card>
             </v-col>
           </v-row>
@@ -45,32 +46,36 @@
     const app = new Vue({
       el: '#app',
       vuetify: new Vuetify({
-        theme: { dark: true },
+        theme: { dark: false },
       }),
       data: {
         rows: [
-          { name: "Array List Sandbox", url: "https://arraylist.ricks.io/", goal: "3320"},
-          { name: "AVL Sandbox", url: "https://avl.ricks.io/", goal:"3320"},
-          { name: "Bridge Strain", url: "https://bridgestrain.ricks.io/", goal: "research"},
-          { name: "Binary Search Tree-Backed Collection", url: "https://bst.ricks.io/", goal:"3320"},
-          { name: "Color Matching", url: "https://colors.ricks.io/", goal:"2620" },
-          { name: "A Graph View of the CS Program", url: "https://csmajory.ricks.io/", goal:"service" },
-          { name: "ER-Simulation", url: "https://er.ricks.io/", goal:"research" },
-          { name: "Checkers Game in the vein of Connect Four", url: "https://four-in-a-row.ricks.io/", goal:"fun" },
-          { name: "Grayscale Sandbox", url: "https://grayscale.ricks.io/", goal:"2620"},
-          { name: "Hashtable Sandbox", url: "https://hash.ricks.io/", goal:"3320"},
-          { name: "HEROES Triage Simulator", url: "https://heroes.ricks.io/", goal:"research"},
-          { name: "State-Level Bridge Repair Patterns", url: "https://hexstates.ricks.io/", goal:"research"},
-          { name: "Blood Pressure Quiz", url: "https://pressure.ricks.io/", goal: "research"},
-          { name: "Detailed Look at Bridge Health", url: "https://repairs.ricks.io/", goal:"research"},
-          { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/", goal:"3320"},
-          { name: "A Word Search Creator", url: "https://word-search.ricks.io/", goal:"fun"},
-          { name: "A Word Visualizer", url: "https://wordl.ricks.io/", goal:"fun"},
-          { name: "Demo Reel", url: "https://tv.ricks.io/", goal:"research"},
-          
+          { name: "Array List Sandbox", url: "https://arraylist.ricks.io/", goal: "3320", image: "list.jpg" },
+          { name: "AVL Sandbox", url: "https://avl.ricks.io/", goal: "3320", image: "list.jpg" },
+          { name: "Bridge Strain", url: "https://bridgestrain.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "Binary Search Tree-Backed Collection", url: "https://bst.ricks.io/", goal: "3320", image: "list.jpg" },
+          { name: "Color Matching", url: "https://colors.ricks.io/", goal: "2620", image: "list.jpg" },
+          { name: "A Graph View of the CS Program", url: "https://csmajory.ricks.io/", goal: "service", image: "list.jpg" },
+          { name: "ER-Simulation", url: "https://er.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "Checkers Game ala Connect Four", url: "https://four-in-a-row.ricks.io/", goal: "fun", image: "list.jpg" },
+          { name: "Grayscale Sandbox", url: "https://grayscale.ricks.io/", goal: "2620", image: "list.jpg" },
+          { name: "Hashtable Sandbox", url: "https://hash.ricks.io/", goal: "3320", image: "list.jpg" },
+          { name: "HEROES Triage Simulator", url: "https://heroes.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "State-Level Bridge Repair Patterns", url: "https://hexstates.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "Blood Pressure Quiz", url: "https://pressure.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "Detailed Look at Bridge Health", url: "https://repairs.ricks.io/", goal: "research", image: "list.jpg" },
+          { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/", goal: "3320", image: "list.jpg" },
+          { name: "A Word Search Creator", url: "https://word-search.ricks.io/", goal: "fun", image: "list.jpg" },
+          { name: "A Word Visualizer", url: "https://wordl.ricks.io/", goal: "fun", image: "list.jpg" },
+          { name: "Demo Reel", url: "https://tv.ricks.io/", goal: "research", image: "list.jpg" },
+
         ],
       },
       methods: {
+        click(row) {
+          console.log(row)
+          window.open(row.url, "_blank")
+        }
 
       },
     });
