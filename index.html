@@ -22,7 +22,7 @@
         <v-container>
           <div style="height:15px"></div>
           <v-row >
-            <v-col v-for="row in rows" :key="row.url">
+            <v-col v-for="row in rows" :key="row.url" max-width="200px">
               <v-card @click="click(row)" max-width="200px">
                 <v-img :src="row.image" max-height="100px" class="align-end">
                   <div style="background-color:rgba(255,255,255,.8);">
@@ -72,8 +72,6 @@
           { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/", goal: "3320", image: "./img/sort.jpg" },
           { name: "Word Search Creator", url: "https://word-search.ricks.io/", goal: "fun", image: "./img/search.jpg" },
           { name: "World Visualizer", url: "https://world.ricks.io/", goal: "fun", image: "./img/world.jpg" },
-          { name: "Demo Reel", url: "https://tv.ricks.io/", goal: "research", image: "./img/camera.jpg" },
-          { name: "Demo Reel", url: "https://tv.ricks.io/", goal: "research", image: "./img/camera.jpg" },
           { name: "Demo Reel", url: "https://tv.ricks.io/", goal: "research", image: "./img/camera.jpg" },
 
         ],
