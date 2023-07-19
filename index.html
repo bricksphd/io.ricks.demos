@@ -17,16 +17,16 @@
       <v-main>
         <v-container>
           <v-row>
-            <v-col cols=12 v-for="row in rows" :key="row.url">
+            <v-col cols=2 v-for="row in rows" :key="row.url">
               <v-card>
-                <v-card-title>
+                <v-card-text>
                   {{row.name}} 
                   <span v-if="row.status">&nbsp;[{{row.status}}]</span>
                   <span v-if="row.url">&nbsp;
                     <a :href="row.url" target="_blank">
                       <v-icon>mdi-link</v-icon></a>
                   </span>
-                </v-card-title>
+                </v-card-text>
               </v-card>
             </v-col>
           </v-row>
@@ -49,28 +49,24 @@
       }),
       data: {
         rows: [
-          { name: "Array List Sandbox", url: "https://arraylist.ricks.io/" },
-          { name: "AVL Sandbox", url: "https://avl.ricks.io/", status:"broken" },
-          { name: "Bridge Strain", url: "https://bridgestrain.ricks.io/" },
-          { name: "Binary Search Tree-Backed Collection", url: "https://bst.ricks.io/", status:"broken" },
-          { name: "Color Matching", url: "https://colors.ricks.io/" },
-          { name: "A Graph View of the CS Program", url: "https://csmajory.ricks.io/" },
-          { name: "Data Structures", url: "https://datastructures.ricks.io/", status:"broken" },
-          { name: "Java Debugging Practice", url: "https://debug.ricks.io/", status:"obscelete" },
-          { name: "ED-GE Engine", url: "https://ed-ge.ricks.io/", status:"obscelete" },
-          { name: "ER-Simulation", url: "https://er-new.ricks.io/" },
-          { name: "ER-Simulation", url: "https://er-old.ricks.io/", status:"obscelete" },
-          { name: "ER-Simulation", url: "https://er.ricks.io/", status:"obscelete" },
-          { name: "fNIRS Visualizer", url: "https://fnirs.ricks.io/", status:"broken" },
-          { name: "Grayscale Sandbox", url: "https://grayscale.ricks.io/"},
-          { name: "Hashtable Sandbox", url: "https://hash.ricks.io/"},
-          { name: "HEROES Triage Simulator", url: "https://heroes.ricks.io/", status: "outdated"},
-          { name: "State-Level Bridge Repair Patterns", url: "https://hexstates.ricks.io/", status: "outdated"},
-          { name: "Pong Demo", url: "https://pong.ricks.io/", status: "broken"},
-          { name: "Blood Pressure Quiz", url: "https://pressure.ricks.io/", status: "broken"},
-          { name: "Detailed Look at Bridge Health", url: "https://repairs.ricks.io/"},
-          { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/"},
-          { name: "Demo Reel", url: "https://tv.ricks.io/"},
+          { name: "Array List Sandbox", url: "https://arraylist.ricks.io/", goal: "3320"},
+          { name: "AVL Sandbox", url: "https://avl.ricks.io/", goal:"3320"},
+          { name: "Bridge Strain", url: "https://bridgestrain.ricks.io/", goal: "research"},
+          { name: "Binary Search Tree-Backed Collection", url: "https://bst.ricks.io/", goal:"3320"},
+          { name: "Color Matching", url: "https://colors.ricks.io/", goal:"2620" },
+          { name: "A Graph View of the CS Program", url: "https://csmajory.ricks.io/", goal:"service" },
+          { name: "ER-Simulation", url: "https://er.ricks.io/", goal:"research" },
+          { name: "Checkers Game in the vein of Connect Four", url: "https://four-in-a-row.ricks.io/", goal:"fun" },
+          { name: "Grayscale Sandbox", url: "https://grayscale.ricks.io/", goal:"2620"},
+          { name: "Hashtable Sandbox", url: "https://hash.ricks.io/", goal:"3320"},
+          { name: "HEROES Triage Simulator", url: "https://heroes.ricks.io/", goal:"research"},
+          { name: "State-Level Bridge Repair Patterns", url: "https://hexstates.ricks.io/", goal:"research"},
+          { name: "Blood Pressure Quiz", url: "https://pressure.ricks.io/", goal: "research"},
+          { name: "Detailed Look at Bridge Health", url: "https://repairs.ricks.io/", goal:"research"},
+          { name: "Sorting Speed Comaprison", url: "https://sort.ricks.io/", goal:"3320"},
+          { name: "A Word Search Creator", url: "https://word-search.ricks.io/", goal:"fun"},
+          { name: "A Word Visualizer", url: "https://wordl.ricks.io/", goal:"fun"},
+          { name: "Demo Reel", url: "https://tv.ricks.io/", goal:"research"},
           
         ],
       },
